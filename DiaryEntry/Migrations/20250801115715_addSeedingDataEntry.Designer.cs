@@ -4,6 +4,7 @@ using DiaryEntry.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DiaryEntry.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250801115715_addSeedingDataEntry")]
+    partial class addSeedingDataEntry
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,7 +53,7 @@ namespace DiaryEntry.Migrations
                         {
                             Id = 1,
                             Content = "Went Hiking with Msane",
-                            Created = new DateTime(2025, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            Created = new DateTime(2025, 8, 1, 13, 57, 15, 39, DateTimeKind.Local).AddTicks(8640),
                             Title = "Went Hiking"
                         });
                 });
